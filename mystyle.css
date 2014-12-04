@@ -1,0 +1,99 @@
+/* Esimerkkejä
+p {
+    color:purple;
+}
+
+h4 {
+    color:red;
+}
+
+tr {
+    background-color:lime;
+}
+
+section {
+    border-width: 2px;
+    border-style: dashed;
+}
+
+a:link {
+    color:lightblue;
+}
+
+a:visited {
+    color:red;
+}
+li:hover {
+    color:yellow; 
+}
+
+h1::after {
+    content: url(big_ben.jpg);
+}
+*/
+
+body {
+    background-color:black;
+     
+}
+
+tr {
+    background-color: lightblue;
+    color: black;
+}
+
+article {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+figure {
+    border-style: dashed;   
+}
+
+a:hover {
+    color:yellow;
+}
+
+li:nth-child(2):hover {
+    color: red;
+}
+
+header + p {
+    color: blue;
+}
+
+.myheader {
+    color: white;
+    background-color:lightblue;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    background-image: url(osalo.jpg);
+    background-position: left;
+}
+
+#nav {
+    background-color:gray;
+    border-radius: 10px;
+    font-size: 12px;
+    font-family: tahoma;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.london {
+    background: linear-gradient(orange, yellow); 
+}
+
+.vienna {
+    background-color: yellow;
+}
+
+footer {
+    color: white;
+    text-align: right;
+}

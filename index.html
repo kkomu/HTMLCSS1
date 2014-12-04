@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>myPage</title>
+        <meta charset="utf-8"/>
+        <script src="myscript.js" type="text/javascript"></script>
+        <link href="mystyle.css" type="text/css" rel="stylesheet"/>
+        <!-- Internal style definitions, overrides css -->
+        <style>
+            /* Element selector
+            tr {
+                background-color: lightblue;
+                color: black;
+            }
+            table {
+                border-width: 4px;
+                border-radius: 7px;
+            }/*
+            
+            /* ID selector
+            #nav {
+                background-color: pink;
+                padding: 10px;
+                
+            }/*
+            
+            /* Class selector
+            .myheader {
+                background-color: orange;
+                margin: 10px;
+                padding: 10px;
+            }
+            .extends {
+                color:white;
+            }*/
+        </style>
+    </head>
+    <body>
+        <div>
+            <header class="myheader extends">
+                <h1>Matkamuistoja</h1>
+            </header>
+            <nav id="nav">
+                <a href="#london">London</a>
+                <a href="#vienna">Vienna</a>
+                <a href="http://www.kaleva.fi">Oulunsalo</a>
+            </nav>
+            <!-- The actual content of the web page -->
+            <section>
+                <!-- First article in the content -->
+                <article class="london">
+                    <header>
+                        <h2 id="london">London</h2>
+                    </header>
+                    <p>Duh it's gr8 place to be. U should visit:</p>
+                    <p>Been there done that, bought the t-shirt</p>
+                    <p>X marks the spot</p>
+                    <ol>
+                        <li>Big Ben</li>
+                        <li>London Eye</li>
+                        <li>London City</li>
+                    </ol>
+                    
+                    <header>
+                        <h4>Some pics...</h4>
+                    </header>    
+                    <figure>
+                        <img src="london_eye.jpg" alt="Pic of London Eye"/>
+                        <img src="big_ben.jpg" alt="Pic of Big Ben"/>
+                        <img src="london.jpg" alt="Pic of London City"/>
+                        <figcaption>Sum pics o London</figcaption>
+                    </figure>
+                    <header>
+                        <h4>Here's some video of London</h4>
+                    </header>
+                    <video controls>
+                        <source src="london_video.ogv"/>
+                    </video>
+                  </article>
+                <!-- Second article of the content -->
+                <article  class="vienna">
+                    <header>
+                        <h2 id="vienna">Vienna</h2>
+                    </header>
+                    <p>Is da capital of Austria</p>
+                    <header>
+                        <h4>Some facts of Vienna</h4>
+                    </header>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fact</th>
+                                <th>More details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- first row -->
+                            <tr> <!-- style="background-color:yellow"-->
+                                <td>Does not actually exist on Earth</td>
+                                <td>Well, that's not true</td>
+                            </tr>
+                            <!-- second row -->
+                            <tr>
+                                <td>City one in a million</td>
+                                <td>So you're telling me there's a chance</td>
+                            </tr>
+                            <!-- third row -->
+                            <tr>
+                                <td colspan="2">I'm outta facts</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <tt>Fact:</tt>
+                    <br/>
+                    <input type="text"/><br/>
+                    <tt>More details:</tt><br/>
+                    <input type="text"/><br/>
+                    <input type="button" value="Submit"/>
+                </article>
+            </section>
+            <hr/>
+            <footer>Copyright(c) 2014 Kyo Komu</footer>
+        </div>
+    </body>
+</html>
