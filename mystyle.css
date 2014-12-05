@@ -49,7 +49,14 @@ article {
 }
 
 figure {
-    border-style: dashed;   
+    border-style: dashed;
+    padding: 5px;
+}
+
+video {
+    position: absolute;
+    left: 700px;
+    top: 150px;
 }
 
 a:hover {
@@ -62,6 +69,20 @@ li:nth-child(2):hover {
 
 header + p {
     color: blue;
+}
+
+img.vaakuna {
+    float: left;
+    padding: 5px;
+}
+
+.basic {
+    display: -mox-box;
+    display: -webkit-box;
+    display: box;
+    box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-box-orient: horizontal;
 }
 
 .myheader {
@@ -86,7 +107,7 @@ header + p {
 }
 
 .london {
-    background: linear-gradient(orange, yellow); 
+    background: linear-gradient(green,orange, yellow, blue, black, red); 
 }
 
 .vienna {
@@ -96,4 +117,14 @@ header + p {
 footer {
     color: white;
     text-align: right;
+}
+
+ol li {
+    display: inline-block;
+    background: lightblue;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: arial;
+    border-style: dotted;
+    border-width: 1px;
 }
