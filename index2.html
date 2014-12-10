@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="fi">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="keywords" content="HTML5, Programming, Training"/>
+        <title>Welcome</title>
+        <script>
+            window.onload = function(event) {
+                console.log(event);
+                var myId = document.getElementById("anim");
+                myId.onclick = handleClick;
+               }     
+                function handleClick(event) {
+                    console.log(event);
+                    //myId.style.opacity = "0.5";
+                    event.target.style.opacity = "0.5";
+                    
+                }
+            
+            
+        </script>
+        
+        <style>
+            .basic {
+                display: -mox-box;
+                display: -webkit-box;
+                display: box;
+                box-orient: horizontal;
+                -moz-box-orient: horizontal;
+                -webkit-box-orient: horizontal;
+            }
+            
+            .forbox {
+                width:100px;
+                height:100px;
+                text-align:center;
+                margin:5px;
+                padding: 5px;
+            }
+            
+            @media screen and (min-width: 0px)
+            {
+                #box1 {
+                    background:orange;
+                }
+            }
+            
+            @media screen and (min-width: 500px)
+            {
+                #box1 {
+                    background:black;
+                }
+            }
+            
+            @media screen and (min-width: 1000px)
+            {
+                #box1 {
+                    background:red;
+                }
+            }
+            
+            #box2 {
+                background:green;
+            }
+            
+            #box3 {
+                background:blue;
+            }
+            
+            .forbox:hover  {
+                
+                background: pink;
+                -webkit-transform: rotate(180deg) scale(1,2);
+                transform: rotate(180deg) scale(1,2);
+               
+            }
+            
+            .box-model {
+                -webkit-transition: all 1s ease-in-out;
+                -moz-transition: all 1s ease-in-out;
+                -o-transition: all 1s ease-in-out;
+                transition: all 1s ease-in-out;
+                background: cyan;
+                
+            }
+                     
+        </style>
+    </head>
+    <body> <!-- style="background-color:white;"-->
+        <div class="basic">
+            <div class="box-model forbox" id="box1"><b>A</b></div>
+            <div class="forbox box-model" id="box2"><b>B</b></div>
+            <div class="forbox box-model" id="box3"><b>C</b></div>
+        </div>
+        <div id="anim" class="box-model">
+            <p>Hello there</p>
+        </div>
+    </body>
+</html>
