@@ -49,7 +49,7 @@
             <!-- The actual content of the web page -->
             <section>
                 <!-- First article in the content -->
-                <article class="london">
+                <article class="london" id="londoner">
                     <header>
                         <h2 id="london">London</h2>
                     </header>
@@ -85,6 +85,7 @@
                             <source src="london_video.ogv"/>
                         </video>
                     </div>
+                    <input type="button" id="btnZoom" value="For Bad Eyes"/>
                   </article>
                 <!-- Second article of the content -->
                 <article  class="vienna">
@@ -95,7 +96,7 @@
                     <header>
                         <h4>Some facts of Vienna</h4>
                     </header>
-                    <table>
+                    <table id="tblFacts">
                         <thead>
                             <tr>
                                 <th>Fact</th>
@@ -122,10 +123,10 @@
                     <br/>
                     <tt>Fact:</tt>
                     <br/>
-                    <input type="text"/><br/>
+                    <input type="text" id="txtFact"/><br/>
                     <tt>More details:</tt><br/>
-                    <input type="text"/><br/>
-                    <input type="button" value="Submit"/>
+                    <input type="text" id="txtDetails"/><br/>
+                    <input type="button" value="Submit" id="btnSubmit"/>
                 </article>
             </section>
             <hr/>

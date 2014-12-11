@@ -5,21 +5,7 @@
         <meta charset="utf-8"/>
         <meta name="keywords" content="HTML5, Programming, Training"/>
         <title>Welcome</title>
-        <script>
-            window.onload = function(event) {
-                console.log(event);
-                var myId = document.getElementById("anim");
-                myId.onclick = handleClick;
-               }     
-                function handleClick(event) {
-                    console.log(event);
-                    //myId.style.opacity = "0.5";
-                    event.target.style.opacity = "0.5";
-                    
-                }
-            
-            
-        </script>
+        <script src="myscript2.js" type="text/javascript"></script>
         
         <style>
             .basic {
@@ -93,8 +79,11 @@
             <div class="forbox box-model" id="box2"><b>B</b></div>
             <div class="forbox box-model" id="box3"><b>C</b></div>
         </div>
-        <div id="anim" class="box-model">
+        <div id="anim"> <!-- class="box-model"-->
             <p>Hello there</p>
+        </div>
+        <div>
+            <textarea id="textData"></textarea>
         </div>
     </body>
 </html>
