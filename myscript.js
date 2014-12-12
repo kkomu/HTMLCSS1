@@ -1,24 +1,47 @@
 window.onload = function(event) {
-    var btnZoom = document.getElementById("btnZoom");
     
+    // Handle zoom-button
+    var btnZoom = document.getElementById("btnZoom");
     btnZoom.onclick = function(event) {
         console.log(event);
         var myArea = document.getElementById("londoner");
         if(myArea.style.fontSize != "20px") {
             myArea.style.fontSize = "20px";
-           }
+        }
         else {
            myArea.style.fontSize = "16px";
-           }
+        }
     };
     
+    // Handle submit-button
+    var btnSubmit = document.getElementById("btnSubmit");
     var factObject = {
         fact: [],
         details: []
     }
+
+    btnSubmit.onclick = function(event) {
+        console.log(event);
+
+        // Read text fields and save data to object
+        var txtFact = document.getElementById("txtFact");
+        var txtDetails = document.getElementById("txtDetails");
+        factObject.fact.push(txtFact.value);
+        factObject.details.push(txtDetails.value);
+
+        // Clear text fields
+        txtFact.value = "";
+        txtDetails.value = "";
+
+        console.log(factObject);
+
+        // Save object to localStorage as JSON
+        if(localStorage) {
+            localStorage.setItem("FactDetails",JSON.stringify(factObject));
+        }
+    };
     
     var tblFacts = document.getElementById("tblFacts");
-    
     if(localStorage) {
         // Read object from local storage and parse JSON back to object
         var stringObject = localStorage.getItem("FactDetails");
@@ -44,36 +67,14 @@ window.onload = function(event) {
         }
     }
     
-    var btnSubmit = document.getElementById("btnSubmit");
-    btnSubmit.onclick = function(event) {
-        console.log(event);
-
-        // Read text fields and save data to object
-        var txtFact = document.getElementById("txtFact");
-        var txtDetails = document.getElementById("txtDetails");
-        factObject.fact.push(txtFact.value);
-        factObject.details.push(txtDetails.value);
-
-        // Clear text fields
-        txtFact.value = "";
-        txtDetails.value = "";
-
-        console.log(factObject);
-
-        // Save object to localStorage as JSON
-        if(localStorage) {
-            localStorage.setItem("FactDetails",JSON.stringify(factObject));
-        }
-    }
-
     // Get weather information using AJAX
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = handleResponse;
     xhr.open('GET','http://api.openweathermap.org/data/2.5/weather?q=Oulu,fi',true);
     xhr.send();
-}
+};
 
-// Handle response from weather service
+/** Handle response from weather service **/
 function handleResponse(event) {
     if(event.target.readyState == 4 && event.target.status == 200) {
         // Parse JSON back to Object
