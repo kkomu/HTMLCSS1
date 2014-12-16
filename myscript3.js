@@ -10,10 +10,8 @@ window.onload = function (event) {
     function success(position) {
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;
-        //var lat = "45";
-        //var lon = "25";
-        console.log(position.coords.latitude);
-        console.log(position.coords.longitude);
+        //console.log(position.coords.latitude);
+        //console.log(position.coords.longitude);
         
         var latLng = new google.maps.LatLng(lat,lon);
         
@@ -26,19 +24,27 @@ window.onload = function (event) {
         
         var map = new google.maps.Map(myMap, myMapOpt);
         
-        var geoCoder = new google.maps.Geocoder();
+        var myMarkerOpt = {
+            position: latLng,
+            map: map
+        };
         
+        var marker = new google.maps.Marker(myMarkerOpt);
+        
+        var geoCoder = new google.maps.Geocoder();
+                
+        /*
         var request = {
             location: latLng
         };
         
         geoCoder.geocode(request,requestHandler);
-        
+        */
     }
-    
+    /*
     function requestHandler(data) {
         console.log(data);
-    }
+    }*/
     
     // Function that's called after failed getCurrentPosition
     function fail(error) {
