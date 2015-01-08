@@ -1,11 +1,12 @@
 var express = require('express');
 var app = express();
+var secret = require('./modules/secret.js');
 
 app.use('/',express.static(__dirname + '/public'));
 
-app.get('/names',function(req,res) {
-    res.send('The secret names are: Pete, MacGyver and Jack!');
-});
+app.get('/names',secret.secrets);
+
+console.log(secret.realSecret);
 
 /*
 app.get('/',function(req,res) {
