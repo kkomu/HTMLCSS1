@@ -1,0 +1,17 @@
+1. Tee uusi hakemisto
+
+2. Asenna express-generator
+npm install -g express-generator
+
+3. Luodaan express-projekti jossa mukana stylus css template engine
+express -c styulus
+
+4. Asennetaan dependency-paketit ajamalla komento samassa hakemistossa josta löytyy package.json
+npm install
+
+5. Käynnistetään serveri projektin juurihakemistosta:
+npm start
+
+6. Asennetaan mongodb api ja ajurit
+npm install mongoose
+npm install mongodb
