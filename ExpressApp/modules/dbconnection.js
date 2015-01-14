@@ -46,6 +46,9 @@ exports.addCourse = function(req,res){
         else {
             console.log("OK");
             res.redirect('/');
+            //res.status(301);
+            //res.setHeader('location','http://localhost:3000');
+            //res.send();
         }
     });
 }
@@ -54,10 +57,24 @@ exports.getCourses = function(req,res) {
     courseObj.find(function(err,data) {
         if(err) {
             console.log("Ei onnistu 2!");
-            res.render('myerror',err);
+            res.render('myerror', {});
         }
         else {
             res.render('index',{course_data:data});
+        }
+    });
+}
+
+exports.getCourseInfo = function(req,res) {
+    console.log(req.query.id);
+    courseObj.findById(req.query.id, function(err, data) {
+        if(err) {
+            console.log("Ei onnistu 3!");
+            res.render('myerror',{});
+        }
+        else {
+            console.log(data);
+            res.render('courseinfo',data);
         }
     });
 

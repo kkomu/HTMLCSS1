@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1 Course Information
-    form(action="/addCourse",method="post")
+    form(action="/addCourse",method="post" data-ajax="false")
         label Course name
         br
         input(type="text",name="name")

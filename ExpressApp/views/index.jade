@@ -8,6 +8,6 @@ block content
   ul(data-role='listview',data-filter='true',data-input='#test')
     each course in course_data
       li 
-        a #{course.name}
-        
+        a(href="/course/?id=" + course._id) #{course.name}
+  br
   a(href="/appendCourse") Append course info
