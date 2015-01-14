@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 
+// Load module logregdb
+var db = require('./modules/logregdb');
+
 var app = express();
 
 // view engine setup
@@ -23,6 +26,7 @@ app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/register_user',db.register);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -54,6 +58,5 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-
 
 module.exports = app;
