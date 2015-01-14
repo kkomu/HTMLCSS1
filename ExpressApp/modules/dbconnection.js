@@ -77,5 +77,30 @@ exports.getCourseInfo = function(req,res) {
             res.render('courseinfo',data);
         }
     });
+}
+
+exports.deleteCourse = function(req,res) {
+    console.log("WTF?");
+    courseObj.findById(req.query.id, function(err,data) {
+        if(err) {
+            console.log("Ei onnistu 4!");
+            res.render('myerror',{});
+        }
+        else {
+            data.remove(function(err) {
+                if(err) {
+                    console.log("Ei onnistu 5!");
+                    res.render('myerror',{});
+                }
+                else {
+                    console.log("OK");
+                    res.redirect('/');
+                }
+                
+            });
+        }
+        
+    });
+
 
 }
