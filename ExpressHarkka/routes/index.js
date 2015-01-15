@@ -11,4 +11,9 @@ router.get('/register', function(req, res) {
   res.render('register', {});
 });
 
+router.get('/addContact', function(req, res) {
+    res.render('newcontact', {});
+});
+
+
 module.exports = router;

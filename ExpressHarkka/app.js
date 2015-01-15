@@ -10,11 +10,17 @@ var routes = require('./routes/index');
 // Load module logregdb
 var db = require('./modules/logregdb');
 
+// Load module express-session
+var session = require('express-session');
+
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+// express-session setup
+app.use(session({secret: '123x456y789'}));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -26,7 +32,12 @@ app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/register_user',db.register);
+app.use('/register', routes);
+app.use('/addContact', routes);
+app.use('/register_user', db.register);
+app.use('/login', db.login);
+app.use('/saveContact', db.saveContact);
+app.use('/contacts', db.contacts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
