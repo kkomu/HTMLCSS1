@@ -64,8 +64,19 @@ exports.login = function(req,res) {
 exports.contacts = function(req,res) {
     if(req.session.username) {
         // Luetaan kontaktit db:stä
-        // TBD
-        res.render('contacts',{});
+        contactModel.find({user: req.session.username}, function(err, data) {
+        if(err) {
+            console.log("Ei onnistu 3!");
+            res.render('error',{});
+        }
+        else {
+            console.log(data);
+            res.render('contacts2',{contact_data:data});
+        }
+    });
+        
+        
+        
     }
 }
 
@@ -112,5 +123,10 @@ exports.saveContact = function(req, res) {
         }
     
     });
-
 }
+    
+exports.logout = function(req, res) {
+    delete req.session.username
+    res.redirect('/');
+}
+    

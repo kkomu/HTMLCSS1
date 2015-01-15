@@ -38,6 +38,7 @@ app.use('/register_user', db.register);
 app.use('/login', db.login);
 app.use('/saveContact', db.saveContact);
 app.use('/contacts', db.contacts);
+app.use('/logout', db.logout);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

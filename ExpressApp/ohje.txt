@@ -20,6 +20,8 @@ npm install mongodb
 8. Käynnistä mongo
 cd C:\Program Files\MongoDB 2.6 Standard\bin
 mongod.exe
+TAI jos loit db-hakemiston jonnekin muualle niin käynnistä:
+mongod.exe --dbpath f:\data\db
 
 9. Käynnistä node-serveri projektin juurihakemistosta:
 npm start

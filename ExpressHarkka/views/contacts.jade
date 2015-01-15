@@ -2,10 +2,11 @@ extends layout
 
 block content
   h1 Contacts
-  //input(type='text',data-type='search',id='test')
-  //ul(data-role='listview',data-filter='true',data-input='#test')
-    //each contact in contact_data
-      //li= contact
+  input(type='text',data-type='search',id='test')
+  ul(data-role='listview',data-filter='true',data-input='#test')
+    each contact in contact_data
+      li
+        a(href='/contactInfo') #{contact.name}
         
   br
   a(href="/addContact") Add new contact

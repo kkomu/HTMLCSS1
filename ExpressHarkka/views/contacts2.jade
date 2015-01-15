@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1 Contacts
+  each contact in contact_data
+    div(data-role="collapsible")
+      h3= contact.name
+      p Address: #{contact.address}
+      p eMail: #{contact.email}
+      p Phone number: #{contact.phone}
+      p Birthday: #{contact.birthday}
+      p General info: #{contact.general}
+
+  br
+  a(href="/addContact") Add new contact
+  br
+  a(href="/logout") Logout
