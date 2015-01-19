@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 
 // Load module logregdb
-var db = require('./modules/logregdb');
+var db = require('./modules/allmongo');
 
 // Load module express-session
 var session = require('express-session');
@@ -34,11 +34,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/register', routes);
 app.use('/addContact', routes);
-app.use('/register_user', db.register);
+app.use('/registerUser', db.registerUser);
 app.use('/login', db.login);
 app.use('/saveContact', db.saveContact);
 app.use('/contacts', db.contacts);
 app.use('/logout', db.logout);
+app.use('/deleteContact', db.deleteContact);
+app.use('/contactInfo', db.contactInfo);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

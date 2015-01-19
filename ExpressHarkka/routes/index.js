@@ -3,7 +3,13 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  // If already logged in, go to contacts page
+  if(req.session.username) {
+    res.redirect('/contacts');
+  }
+  else {
+    res.render('index', { title: 'Addressbook' });
+  }
 });
 
 /* GET registration page */
@@ -12,7 +18,7 @@ router.get('/register', function(req, res) {
 });
 
 router.get('/addContact', function(req, res) {
-    res.render('newcontact', {});
+  res.render('newcontact', {});
 });
 
 

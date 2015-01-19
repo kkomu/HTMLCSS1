@@ -6,7 +6,9 @@ block content
   ul(data-role='listview',data-filter='true',data-input='#test')
     each contact in contact_data
       li
-        a(href='/contactInfo') #{contact.name}
+        a(href="/contactInfo/?id=" + contact._id,data-ajax="false") #{contact.name}
         
   br
   a(href="/addContact") Add new contact
+  br
+  a(href="/logout") Logout
