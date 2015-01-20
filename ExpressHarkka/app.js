@@ -20,7 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // express-session setup
-app.use(session({secret: '123x456y789'}));
+app.use(session({secret: '123x456y789', resave: false, saveUninitialized: true}));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
